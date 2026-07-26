@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Durgesh Yadav - IT Support Engineer | Portfolio</title>
+    <meta name="description" content="IT Support Engineer at Vserv Infosystems supporting Haryana Gramin Bank. Expert in Desktop Support, Active Directory, Network Troubleshooting, and Banking IT Solutions.">
+    <meta name="keywords" content="IT Support Engineer, Desktop Support, Network Administrator, Active Directory, Finacle Banking Support, Haryana Gramin Bank">
+    <meta name="author" content="Durgesh Yadav">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Durgesh Yadav - IT Support Engineer Portfolio">
+    <meta property="og:description" content="Professional IT Support Engineer with 1+ years experience supporting 33+ bank branches">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://durgeshyadav.com">
+    <meta property="og:image" content="./assets/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Loading Screen -->
+    <div class="loader-wrapper">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-text">Loading...</div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-bar"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">Durgesh</span>
+                <span class="logo-dot">.</span>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">
+                        <i class='bx bx-home-alt'></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">
+                        <i class='bx bx-user'></i>
+                        <span>About</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">
+                        <i class='bx bx-briefcase'></i>
+                        <span>Services</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">
+                        <i class='bx bx-code-alt'></i>
+                        <span>Skills</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link">
+                        <i class='bx bx-briefcase-alt'></i>
+                        <span>Experience</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">
+                        <i class='bx bx-folder'></i>
+                        <span>Projects</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#certifications" class="nav-link">
+                        <i class='bx bx-certification'></i>
+                        <span>Certifications</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">
+                        <i class='bx bx-envelope'></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+                    <i class='bx bx-moon'></i>
+                </button>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="gradient-circle gradient-1"></div>
+            <div class="gradient-circle gradient-2"></div>
+            <div class="gradient-circle gradient-3"></div>
+            <canvas id="particle-canvas"></canvas>
+        </div>
+
+        <div class="hero-container">
+            <div class="hero-content" data-aos="fade-right">
+                <div class="hero-badge">
+                    <span class="status-dot"></span>
+                    Available for Work
+                </div>
+                
+                <h1 class="hero-title">
+                    Hi, I'm <span class="gradient-text">Durgesh Yadav</span>
+                </h1>
+                
+                <div class="typing-container">
+                    <span class="typing-prefix">I'm a </span>
+                    <span class="typing-text" id="typing-text"></span>
+                    <span class="cursor-blink">|</span>
+                </div>
+                
+                <p class="hero-description">
+                    IT Support Engineer at <strong>Vserv Infosystems Pvt. Ltd.</strong> supporting 
+                    <strong>Haryana Gramin Bank</strong>. Specializing in Desktop Support, Network Administration, 
+                    Active Directory Management, and Banking IT Solutions across 33+ branches.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class='bx bx-envelope'></i>
+                        <span>Contact Me</span>
+                    </a>
+                    <a href="./assets/resume.pdf" download class="btn btn-secondary">
+                        <i class='bx bx-download'></i>
+                        <span>Download Resume</span>
+                    </a>
+                </div>
+
+                <div class="hero-social">
+                    <a href="https://github.com/YADAVDURGESH01" target="_blank" class="social-link" aria-label="GitHub">
+                        <i class='bx bxl-github'></i>
+                    </a>
+                    <a href="www.linkedin.com/in/yadavdurgesh01" target="_blank" class="social-link" aria-label="LinkedIn">
+                        <i class='bx bxl-linkedin'></i>
+                    </a>
+                    <a href="https://wa.me/918932922696" target="_blank" class="social-link" aria-label="WhatsApp">
+                        <i class='bx bxl-whatsapp'></i>
+                    </a>
+                    <a href="mailto:durgesh@example.com" class="social-link" aria-label="Email">
+                        <i class='bx bx-envelope'></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-image" data-aos="fade-left">
+                <div class="image-wrapper">
+                    <div class="image-glow"></div>
+                    <img src="./assets/profile.jpg" alt="Durgesh Yadav - IT Support Engineer" class="profile-image">
+                    <div class="floating-card card-1" data-float="1">
+                        <i class='bx bx-check-circle'></i>
+                        <span>33+</span>
+                        <p>Branches</p>
+                    </div>
+                    <div class="floating-card card-2" data-float="2">
+                        <i class='bx bx-desktop'></i>
+                        <span>500+</span>
+                        <p>Systems</p>
+                    </div>
+                    <div class="floating-card card-3" data-float="3">
+                        <i class='bx bx-support'></i>
+                        <span>1000+</span>
+                        <p>Tickets</p>
+                    </div>
+                    <div class="floating-card card-4" data-float="4">
+                        <i class='bx bx-smile'></i>
+                        <span>99%</span>
+                        <p>Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll Down</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Who I Am</span>
+                <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+                <p class="section-subtitle">Professional IT Support Engineer with Banking Domain Expertise</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right">
+                    <div class="about-image-wrapper">
+                        <img src="./assets/about.jpg" alt="About Durgesh Yadav">
+                    </div>
+                </div>
+
+                <div class="about-text" data-aos="fade-left">
+                    <div class="about-intro glass-card">
+                        <h3>Hello, I'm Durgesh Yadav</h3>
+                        <p>
+                            A dedicated IT Support Engineer currently working with <strong>Vserv Infosystems Pvt. Ltd.</strong>, 
+                            providing comprehensive IT support to <strong>Haryana Gramin Bank</strong>. With over a year of 
+                            hands-on experience, I specialize in maintaining IT infrastructure across 33+ bank branches.
+                        </p>
+                    </div>
+
+                    <div class="about-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-icon">
+                                <i class='bx bx-briefcase'></i>
+                            </div>
+                            <div class="timeline-content glass-card">
+                                <h4>Current Role</h4>
+                                <h5>IT Support Engineer</h5>
+                                <p class="company">Vserv Infosystems Pvt. Ltd.</p>
+                                <p class="client">Client: Haryana Gramin Bank</p>
+                                <span class="duration">Jan 2026 - Present</span>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-icon">
+                                <i class='bx bx-briefcase'></i>
+                            </div>
+                            <div class="timeline-content glass-card">
+                                <h4> Role</h4>
+                                <h5>IT Support Engineer</h5>
+                                <p class="company">Integreon Managed Solutions (India) Pvt. Ltd.</p>
+                                <p class="client">Noida Branch</p>
+                                <span class="duration">Jan 2025 - Dec 2025</span>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-icon">
+                                <i class='bx bx-graduation'></i>
+                            </div>
+                            <div class="timeline-content glass-card">
+                                <h4>Education</h4>
+                                <h5>Master of Computer Applications</h5>
+                                <p class="specialization">Specialization: Artificial Intelligence & Machine Learning</p>
+                                <span class="duration">Completed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-objective glass-card">
+                        <h4><i class='bx bx-target-lock'></i> Career Objective</h4>
+                        <p>
+                            To leverage my technical expertise in IT infrastructure, desktop support, and network administration 
+                            to contribute to organizational growth while continuously enhancing my skills in emerging technologies. 
+                            Seeking opportunities to work with innovative teams in solving complex IT challenges in banking and 
+                            enterprise environments.
+                        </p>
+                    </div>
+
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class='bx bx-check-shield'></i>
+                            <p>Supporting 33+ Bank Branches</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class='bx bx-server'></i>
+                            <p>Managing 500+ Systems</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class='bx bx-support'></i>
+                            <p>99% User Satisfaction</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class='bx bx-medal'></i>
+                            <p>MCA in AI & ML</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">What I Do</span>
+                <h2 class="section-title">My <span class="gradient-text">Services</span></h2>
+                <p class="section-subtitle">Comprehensive IT Support Solutions for Banking & Enterprise</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class='bx bx-desktop'></i>
+                    </div>
+                    <h3>Desktop Support</h3>
+                    <p>
+                        Complete desktop and laptop troubleshooting, hardware diagnostics, system optimization, 
+                        and end-user technical assistance. Expert in Windows 10/11 environments.
+                    </p>
+                    <ul class="service-list">
+                        <li><i class='bx bx-check'></i> Hardware Troubleshooting</li>
+                        <li><i class='bx bx-check'></i> Software Installation</li>
+                        <li><i class='bx bx-check'></i> System Performance Tuning</li>
+                    </ul>
+                </div>
+
+                <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class='bx bx-network-chart'></i>
+                    </div>
+                    <h3>Network Troubleshooting</h3>
+                    <p>
+                        Expert in diagnosing and resolving LAN/WAN connectivity issues, configuring network devices, 
+                        and ensuring seamless communication across branches.
+                    </p>
+                    <ul class="service-list">
+                        <li><i class='bx bx-check'></i> LAN/WAN Configuration</li>
+                        <li><i class='bx bx-check'></i> TCP/IP, DNS, DHCP Setup</li>
+                        <li><i class='bx bx-check'></i> VPN Troubleshooting</li>
+                    </ul>
+                </div>
+
+                <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class='bx bx-windows'></i>
+                    </div>
+                    <h3>Windows Administration</h3>
+                    <p>
+                        Proficient in Windows installation, configuration, updates, and system maintenance. 
+                        Ensuring optimal performance and security compliance.
+                    </p>
+                    <ul class="service-list">
+                        <li><i class='bx bx-check'></i> Windows 10/11 Installation</li>
+                        <li><i class='bx bx-check'></i> System Updates & Patches</li>
+                        <li><i class='bx bx-check'></i> Performance Monitoring</li>
+                    </ul>
+                </div>
+
+                <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class='bx bx-user-circle'></i>
+                    </div>
+                    <h3>Active Directory</h3>
+                    <p>
+                        User account management, password resets, group policy configuration, and domain 
+                        administration for seamless authentication and access control.
+                    </p>
+                    <ul class="service-list">
+                        <li><i class='bx bx-check'></i> User Management</li>
+                        <li><i class='bx bx-check'></i> Password Reset</li>
+                        <li><i class='bx bx-check'></i> Group Policy Setup</li>
+                    </ul>
+                </div>
+
+                <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class='bx bx-printer'></i>
+                    </div>
+                    <h3>Printer Support</h3>
+                    <p>
+                        Installation, configuration, and troubleshooting of network and local printers. 
+                        Ensuring continuous printing operations across all branches.
+                    </p>
+                    <ul class="service-list">
+                        <li><i class='bx bx-check'></i> Printer Installation</li>
+                        <li><i class='bx bx-check'></i> Driver Configuration</li>
+                        <li><i class='bx bx-check'></i> Print Queue Management</li>
+                    </ul>
+                </div>
+
+                <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-icon">
+                        <i class='bx bx-wrench'></i>
+                    </div>
+                    <h3>Hardware Maintenance</h3>
+                    <p>
+                        Preventive and corrective hardware maintenance, component replacement, and 
+                        system upgrades to ensure maximum uptime.
+                    </p>
+                    <ul class="service-list">
+                        <li><i class='bx bx-check'></i> Component Replacement</li>
+                        <li><i class='bx bx-check'></i> System Upgrades</li>
+                        <li><i class='bx bx-check'></i> Preventive Maintenance</li>
+                    </ul>
+                </div>
+
+                <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="700">
+                    <div class="service-icon">
+                        <i class='bx bx-folder-open'></i>
+                    </div>
+                    <h3>IT Asset Management</h3>
+                    <p>
+                        Comprehensive tracking and management of IT assets, inventory control, and 
+                        lifecycle management across multiple locations.
+                    </p>
+                    <ul class="service-list">
+                        <li><i class='bx bx-check'></i> Asset Tracking</li>
+                        <li><i class='bx bx-check'></i> Inventory Management</li>
+                        <li><i class='bx bx-check'></i> Branch IT Audit</li>
+                    </ul>
+                </div>
+
+                <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="800">
+                    <div class="service-icon">
+                        <i class='bx bx-credit-card'></i>
+                    </div>
+                    <h3>Banking Software Support</h3>
+                    <p>
+                        Specialized support for Finacle banking software, ensuring smooth operations 
+                        and quick resolution of banking application issues.
+                    </p>
+                    <ul class="service-list">
+                        <li><i class='bx bx-check'></i> Finacle Support</li>
+                        <li><i class='bx bx-check'></i> Application Troubleshooting</li>
+                        <li><i class='bx bx-check'></i> User Training</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">My Expertise</span>
+                <h2 class="section-title">Technical <span class="gradient-text">Skills</span></h2>
+                <p class="section-subtitle">Tools & Technologies I Work With</p>
+            </div>
+
+            <div class="skills-content">
+                <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3><i class='bx bx-windows'></i> Operating Systems</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Windows 11</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Windows Server</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Active Directory</span>
+                                <span class="skill-percentage">92%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3><i class='bx bx-network-chart'></i> Networking</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">LAN/WAN</span>
+                                <span class="skill-percentage">88%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">TCP/IP</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">DNS/DHCP</span>
+                                <span class="skill-percentage">87%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" style="width: 87%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">VPN</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category" data-aos="fade-up" data-aos-delay="300">
+                    <h3><i class='bx bx-code-alt'></i> Programming & Databases</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">HTML</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">CSS</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">MySQL</span>
+                                <span class="skill-percentage">78%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" style="width: 78%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category" data-aos="fade-up" data-aos-delay="400">
+                    <h3><i class='bx bx-briefcase'></i> Tools & Software</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Printer Support</span>
+                                <span class="skill-percentage">93%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" style="width: 93%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Office 365</span>
+                                <span class="skill-percentage">88%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Finacle</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Git/GitHub</span>
+                                <span class="skill-percentage">82%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" style="width: 82%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">My Journey</span>
+                <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
+                <p class="section-subtitle">Professional Career Path</p>
+            </div>
+
+            <div class="timeline-wrapper">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-block" data-aos="fade-up">
+                    <div class="timeline-marker">
+                        <i class='bx bx-briefcase'></i>
+                    </div>
+                    <div class="timeline-card glass-card">
+                        <span class="timeline-date">2026 - Present</span>
+                        <h3>IT Support Engineer</h3>
+                        <h4>Vserv Infosystems Pvt. Ltd.</h4>
+                        <p class="company-info">
+                            <i class='bx bx-building'></i> Client: <strong>Haryana Gramin Bank</strong>
+                        </p>
+                        <p class="job-description">
+                            Providing comprehensive IT support across 33+ bank branches, managing desktop infrastructure, 
+                            network systems, and banking applications. Leading IT audit initiatives and ensuring 99% 
+                            system uptime through proactive maintenance.
+                        </p>
+                        <div class="responsibilities">
+                            <h5>Key Responsibilities:</h5>
+                            <ul>
+                                <li><i class='bx bx-check-circle'></i> Supporting 33+ Haryana Gramin Bank branches</li>
+                                <li><i class='bx bx-check-circle'></i> Desktop & Laptop troubleshooting and maintenance</li>
+                                <li><i class='bx bx-check-circle'></i> Network configuration and troubleshooting (LAN/WAN)</li>
+                                <li><i class='bx bx-check-circle'></i> Active Directory user management & password resets</li>
+                                <li><i class='bx bx-check-circle'></i> Printer installation, configuration & support</li>
+                                <li><i class='bx bx-check-circle'></i> Hardware maintenance & component replacement</li>
+                                <li><i class='bx bx-check-circle'></i> IT asset management & inventory tracking</li>
+                                <li><i class='bx bx-check-circle'></i> Finacle banking software support</li>
+                                <li><i class='bx bx-check-circle'></i> Conducting branch IT audits</li>
+                                <li><i class='bx bx-check-circle'></i> System performance monitoring & optimization</li>
+                            </ul>
+                        </div>
+                        <div class="achievement-tags">
+                            <span class="tag">500+ Systems Managed</span>
+                            <span class="tag">1000+ Tickets Resolved</span>
+                            <span class="tag">99% User Satisfaction</span>
+                        </div>
+                    </div>
+                    <h3>
+                        
+                    </h3>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">My Work</span>
+                <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+                <p class="section-subtitle">Innovative Solutions & Personal Initiatives</p>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card glass-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="./assets/project1.jpg" alt="IT Support Dashboard">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com" target="_blank" class="project-link">
+                                    <i class='bx bxl-github'></i>
+                                </a>
+                                <a href="https://demo.com" target="_blank" class="project-link">
+                                    <i class='bx bx-link-external'></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>IT Support Dashboard</h3>
+                        <p>
+                            Real-time monitoring dashboard for tracking support tickets, system health, and 
+                            branch-wise IT asset status across all Haryana Gramin Bank locations.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="./assets/project2.jpg" alt="Branch Asset Inventory System">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com" target="_blank" class="project-link">
+                                    <i class='bx bxl-github'></i>
+                                </a>
+                                <a href="https://demo.com" target="_blank" class="project-link">
+                                    <i class='bx bx-link-external'></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Branch Asset Inventory System</h3>
+                        <p>
+                            Comprehensive asset tracking system for managing IT hardware, software licenses, 
+                            and equipment across multiple bank branches with automated audit reports.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image">
+                        <img src="./assets/project3.jpg" alt="Network Monitoring Dashboard">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com" target="_blank" class="project-link">
+                                    <i class='bx bxl-github'></i>
+                                </a>
+                                <a href="https://demo.com" target="_blank" class="project-link">
+                                    <i class='bx bx-link-external'></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Network Monitoring Dashboard</h3>
+                        <p>
+                            Automated network monitoring tool for tracking connectivity status, bandwidth usage, 
+                            and identifying network issues across all connected branches.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-image">
+                        <img src="./assets/project4.jpg" alt="Ticket Management System">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com" target="_blank" class="project-link">
+                                    <i class='bx bxl-github'></i>
+                                </a>
+                                <a href="https://demo.com" target="_blank" class="project-link">
+                                    <i class='bx bx-link-external'></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Ticket Management System</h3>
+                        <p>
+                            Streamlined helpdesk ticketing system for tracking, prioritizing, and resolving 
+                            IT support requests with automated notifications and SLA tracking.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-image">
+                        <img src="./assets/project5.jpg" alt="Personal Portfolio Website">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com" target="_blank" class="project-link">
+                                    <i class='bx bxl-github'></i>
+                                </a>
+                                <a href="https://demo.com" target="_blank" class="project-link">
+                                    <i class='bx bx-link-external'></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Personal Portfolio Website</h3>
+                        <p>
+                            Modern, responsive portfolio website showcasing professional experience, skills, 
+                            and projects with glassmorphism design and smooth animations.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card coming-soon" data-aos="fade-up" data-aos-delay="600">
+                    <div class="project-image">
+                        <div class="coming-soon-overlay">
+                            <i class='bx bx-code-curly'></i>
+                            <h4>More Projects</h4>
+                            <p>Coming Soon</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Future Innovations</h3>
+                        <p>
+                            Currently working on more exciting projects including AI-powered support automation 
+                            and advanced network analytics tools.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications" id="certifications">
+        <div class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Credentials</span>
+                <h2 class="section-title">Certifications <span class="gradient-text">& Education</span></h2>
+                <p class="section-subtitle">Professional Qualifications & Training</p>
+            </div>
+
+            <div class="certifications-grid">
+                <div class="cert-card glass-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="cert-icon">
+                        <i class='bx bx-graduation'></i>
+                    </div>
+                    <h3>Master of Computer Applications</h3>
+                    <p class="cert-issuer">Specialization: AI & Machine Learning</p>
+                    <span class="cert-status completed">Completed</span>
+                </div>
+
+                <div class="cert-card glass-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="cert-icon">
+                        <i class='bx bx-network-chart'></i>
+                    </div>
+                    <h3>Networking Fundamentals</h3>
+                    <p class="cert-issuer">Professional Certification</p>
+                    <span class="cert-status completed">Certified</span>
+                </div>
+
+                <div class="cert-card glass-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="cert-icon">
+                        <i class='bx bx-support'></i>
+                    </div>
+                    <h3>IT Support Specialist</h3>
+                    <p class="cert-issuer">Industry Certification</p>
+                    <span class="cert-status completed">Certified</span>
+                </div>
+
+                <div class="cert-card glass-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="cert-icon">
+                        <i class='bx bxl-python'></i>
+                    </div>
+                    <h3>Python Programming</h3>
+                    <p class="cert-issuer">Programming Certification</p>
+                    <span class="cert-status completed">Certified</span>
+                </div>
+
+                <div class="cert-card glass-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="cert-icon">
+                        <i class='bx bx-data'></i>
+                    </div>
+                    <h3>SQL & Database Management</h3>
+                    <p class="cert-issuer">Database Certification</p>
+                    <span class="cert-status completed">Certified</span>
+                </div>
+
+                <div class="cert-card glass-card in-progress" data-aos="fade-up" data-aos-delay="600">
+                    <div class="cert-icon">
+                        <i class='bx bx-server'></i>
+                    </div>
+                    <h3>CCNA Certification</h3>
+                    <p class="cert-issuer">Cisco Networking</p>
+                    <span class="cert-status progress">In Progress</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements" id="achievements">
+        <div class="section-container">
+            <div class="achievements-grid">
+                <div class="achievement-card glass-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="achievement-icon">
+                        <i class='bx bx-buildings'></i>
+                    </div>
+                    <h2 class="counter" data-target="33">0</h2>
+                    <span class="plus">+</span>
+                    <p>Branches Supported</p>
+                </div>
+
+                <div class="achievement-card glass-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="achievement-icon">
+                        <i class='bx bx-desktop'></i>
+                    </div>
+                    <h2 class="counter" data-target="500">0</h2>
+                    <span class="plus">+</span>
+                    <p>Systems Managed</p>
+                </div>
+
+                <div class="achievement-card glass-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="achievement-icon">
+                        <i class='bx bx-support'></i>
+                    </div>
+                    <h2 class="counter" data-target="1000">0</h2>
+                    <span class="plus">+</span>
+                    <p>Tickets Resolved</p>
+                </div>
+
+                <div class="achievement-card glass-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="achievement-icon">
+                        <i class='bx bx-smile'></i>
+                    </div>
+                    <h2 class="counter" data-target="99">0</h2>
+                    <span class="plus">%</span>
+                    <p>User Satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">Contact <span class="gradient-text">Me</span></h2>
+                <p class="section-subtitle">Let's discuss your IT support needs</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-card glass-card">
+                        <div class="contact-icon">
+                            <i class='bx bx-map'></i>
+                        </div>
+                        <h4>Location</h4>
+                        <p>Haryana, India</p>
+                        <p>Supporting across NCR Region</p>
+                    </div>
+
+                    <div class="contact-card glass-card">
+                        <div class="contact-icon">
+                            <i class='bx bx-envelope'></i>
+                        </div>
+                        <h4>Email</h4>
+                        <a href="mailto:durgesh@example.com">durgesh@example.com</a>
+                        <a href="mailto:support@example.com">support@example.com</a>
+                    </div>
+
+                    <div class="contact-card glass-card">
+                        <div class="contact-icon">
+                            <i class='bx bx-phone'></i>
+                        </div>
+                        <h4>Phone</h4>
+                        <a href="tel:+919876543210">+91 8932922696</a>
+                        <p>Mon - Sat: 9:00 AM - 6:00 PM</p>
+                    </div>
+
+                    <div class="contact-social">
+                        <h4>Follow Me</h4>
+                        <div class="social-links">
+                            <a href="www.linkedin.com/in/yadavdurgesh01" target="_blank" class="social-link">
+                                <i class='bx bxl-linkedin'></i>
+                            </a>
+                            <a href="https://github.com/YADAVDURGESH01" target="_blank" class="social-link">
+                                <i class='bx bxl-github'></i>
+                            </a>
+                            <a href="https://wa.me/918932922696" target="_blank" class="social-link">
+                                <i class='bx bxl-whatsapp'></i>
+                            </a>
+                            <a href="mailto:durgesh@example.com" class="social-link">
+                                <i class='bx bx-envelope'></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form glass-card" id="contact-form" data-aos="fade-left">
+                    <input type="hidden" name="access_key" value="5dc10972-101c-4e2d-aba9-ba96f93bd0f9">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required placeholder="How can I help you?">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" required placeholder="Your message here..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        <i class='bx bx-send'></i>
+                        <span>Send Message</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <span class="logo-text">Durgesh</span>
+                        <span class="logo-dot">.</span>
+                    </div>
+                    <p>
+                        IT Support Engineer specializing in banking IT infrastructure, 
+                        desktop support, and network administration. Committed to delivering 
+                        excellence in technical support services.
+                    </p>
+                    <div class="footer-social">
+                        <a href="www.linkedin.com/in/yadavdurgesh01" target="_blank" aria-label="LinkedIn">
+                            <i class='bx bxl-linkedin'></i>
+                        </a>
+                        <a href="https://github.com/YADAVDURGESH01" target="_blank" aria-label="GitHub">
+                            <i class='bx bxl-github'></i>
+                        </a>
+                        <a href="https://wa.me/918932922696" target="_blank" aria-label="WhatsApp">
+                            <i class='bx bxl-whatsapp'></i>
+                        </a>
+                        <a href="mailto:durgesh@example.com" aria-label="Email">
+                            <i class='bx bx-envelope'></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>More</h4>
+                    <ul>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#certifications">Certifications</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>
+                            <i class='bx bx-map'></i>
+                            <span>Haryana, India</span>
+                        </li>
+                        <li>
+                            <i class='bx bx-phone'></i>
+                            <a href="tel:+918932922696">+91 8932922696</a>
+                        </li>
+                        <li>
+                            <i class='bx bx-envelope'></i>
+                            <a href="mailto:durgesh@example.com">durgesh@example.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 <strong>Durgesh Yadav</strong>. All Rights Reserved.</p>
+                <p>Designed & Developed with <i class='bx bx-heart'></i> by <strong>Durgesh Yadav</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to Top">
+        <i class='bx bx-up-arrow-alt'></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
