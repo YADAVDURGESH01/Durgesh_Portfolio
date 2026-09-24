@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Durgesh Yadav - IT Support Engineer specializing in desktop support, network administration, Active Directory, and banking IT solutions across 33+ branches">
+  <meta name="keywords" content="IT Support Engineer, Desktop Support, Network Administration, Active Directory, Banking IT, Haryana">
+  <meta name="author" content="Durgesh Yadav">
+  <meta property="og:title" content="Durgesh Yadav - IT Support Engineer">
+  <meta property="og:description" content="IT Support Engineer specializing in desktop support, network administration and banking IT solutions">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0f18'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' fill='%2322d3ee' text-anchor='middle'%3E%26%239618%3C/text%3E%3C/svg%3E">
+  <title>Durgesh Yadav — IT Support Engineer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NOC Status Bar -->
+  <div class="statusbar" id="statusbar">
+    <div class="statusbar-inner">
+      <span class="sb-item sb-brand"><span class="led led-green"></span> NOC // DURGESH-YADAV</span>
+      <span class="sb-item sb-hide-sm">STATUS: <b class="c-green">ONLINE</b></span>
+      <span class="sb-item sb-hide-sm">UPTIME: <b id="uptime" class="c-cyan">00:00:00</b></span>
+      <span class="sb-item sb-hide-sm">PING: <b id="ping" class="c-cyan">12ms</b></span>
+      <span class="sb-item">SESSION: <b id="clock" class="c-cyan">--:--:--</b></span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="nav-brand">
+        <span class="brand-prompt">&gt;_</span>
+        <span id="navName">Durgesh Yadav</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link active"><svg class="i"></svg>Home</a></li>
+        <li><a href="#about" class="nav-link"><svg class="i"></svg>About</a></li>
+        <li><a href="#skills" class="nav-link"><svg class="i"></svg>Skills</a></li>
+        <li><a href="#experience" class="nav-link"><svg class="i"></svg>Experience</a></li>
+        <li><a href="#education" class="nav-link"><svg class="i"></svg>Education</a></li>
+        <li><a href="#resume" class="nav-link"><svg class="i"></svg>Resume</a></li>
+        <li><a href="#contact" class="nav-link"><svg class="i"></svg>Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero / NOC Dashboard -->
+  <section id="home" class="hero">
+    <canvas id="netCanvas"></canvas>
+    <div class="hero-scanlines"></div>
+
+    <div class="container hero-grid">
+      <!-- Terminal + intro -->
+      <div class="hero-content reveal">
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span class="t-dot t-red"></span>
+            <span class="t-dot t-yellow"></span>
+            <span class="t-dot t-green"></span>
+            <span class="t-title">root@portfolio:~ — bash</span>
+          </div>
+          <div class="terminal-body">
+            <p><span class="t-prompt">$</span> whoami</p>
+            <p class="t-out" id="termName">Durgesh Yadav</p>
+            <p><span class="t-prompt">$</span> cat role.txt</p>
+            <p class="t-out t-cyan"><span id="termRole"></span><span class="t-caret">▋</span></p>
+            <p><span class="t-prompt">$</span> systemctl status career</p>
+            <p class="t-out t-green">● active (running) — all systems operational</p>
+          </div>
+        </div>
+
+        <h1 class="hero-title">Hi, I'm <span class="highlight" id="heroName">Durgesh Yadav</span></h1>
+        <p class="hero-subtitle" id="heroRoleLine"><span class="role-chip"></span></p>
+        <p class="hero-description" id="heroDesc"></p>
+
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary"><svg class="i"></svg> Get In Touch</a>
+          <a href="#experience" class="btn btn-ghost"><svg class="i"></svg> View Experience</a>
+          <button class="btn btn-outline" onclick="downloadCV()"><svg class="i"></svg> Download CV</button>
+        </div>
+
+        <!-- NOC-style stats -->
+        <div class="stats-grid" id="statsGrid"></div>
+
+        <div class="social-links" id="heroSocials"></div>
+      </div>
+
+      <!-- Photo / rack visual -->
+      <div class="hero-visual reveal" data-delay="150">
+        <div class="rack-frame">
+          <div class="rack-ear rack-ear-l"></div>
+          <div class="rack-ear rack-ear-r"></div>
+
+          <div class="avatar-wrap">
+            <div class="avatar-ring ring-1"></div>
+            <div class="avatar-ring ring-2"></div>
+            <div class="avatar-scan"></div>
+            <div class="avatar-photo" id="heroAvatar">
+              <span class="avatar-initials">DY</span>
+            </div>
+          </div>
+
+          <div class="node-badge nb-1"><span class="led led-green"></span> AD-DOMAIN</div>
+          <div class="node-badge nb-2"><span class="led led-cyan"></span> CORE-SW01</div>
+          <div class="node-badge nb-3"><span class="led led-amber"></span> MS365 · OK</div>
+          <div class="node-badge nb-4"><span class="led led-green"></span> BACKUP · 100%</div>
+
+          <div class="rack-unit">
+            <span class="ru-label">RU-01</span>
+            <span class="ru-leds"><i class="led led-green blink"></i><i class="led led-cyan blink"></i><i class="led led-green"></i></span>
+            <span class="ru-text">DC-CORE-01 · HEALTHY</span>
+          </div>
+          <div class="rack-unit">
+            <span class="ru-label">RU-02</span>
+            <span class="ru-leds"><i class="led led-green blink"></i><i class="led led-amber blink"></i><i class="led led-green"></i></span>
+            <span class="ru-text">LAN-WAN · CONNECTED</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech ticker -->
+    <div class="ticker">
+      <div class="ticker-track" id="tickerTrack"></div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="mouse"><div class="wheel"></div></div>
+      <p>SCROLL</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section about">
+    <div class="container">
+      <h2 class="section-title reveal"><span class="title-tag">// 01</span> ABOUT ME</h2>
+
+      <div class="about-grid">
+        <div class="about-image reveal">
+          <div class="photo-frame">
+            <span class="corner c-tl"></span><span class="corner c-tr"></span>
+            <span class="corner c-bl"></span><span class="corner c-br"></span>
+            <div class="photo-box" id="aboutPhoto">
+              <span class="avatar-initials big">DY</span>
+            </div>
+            <div class="photo-caption"><span class="led led-green"></span> OPERATOR · ONLINE</div>
+          </div>
+          <div class="float-tags">
+            <span class="ftag"><svg class="i"></svg> Windows</span>
+            <span class="ftag"><svg class="i"></svg> Finacle</span>
+            <span class="ftag"><svg class="i"></svg> Network</span>
+            <span class="ftag"><svg class="i"></svg> Office 365</span>
+          </div>
+        </div>
+
+        <div class="about-text reveal" data-delay="150">
+          <p class="lead" id="aboutLead"></p>
+          <p id="aboutBody"></p>
+
+          <div class="info-grid" id="infoGrid"></div>
+          <div class="trait-row" id="traitRow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section skills">
+    <div class="container">
+      <h2 class="section-title reveal"><span class="title-tag">// 02</span> TECHNICAL SKILLS</h2>
+
+      <!-- Rack-style category tabs -->
+      <div class="rack-tabs reveal" id="skillTabs"></div>
+      <div class="meters-panel reveal" id="skillMeters"></div>
+
+      <div class="skills-grid" id="skillsGrid"></div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="section experience">
+    <div class="container">
+      <h2 class="section-title reveal"><span class="title-tag">// 03</span> PROFESSIONAL EXPERIENCE</h2>
+      <div class="timeline" id="timeline"></div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="section education">
+    <div class="container">
+      <h2 class="section-title reveal"><span class="title-tag">// 04</span> EDUCATION &amp; CERTIFICATIONS</h2>
+      <div class="edu-grid" id="eduGrid"></div>
+    </div>
+  </section>
+
+  <!-- Resume -->
+  <section id="resume" class="section resume-section">
+    <div class="container">
+      <h2 class="section-title reveal"><span class="title-tag">// 05</span> RESUME</h2>
+
+      <div class="resume-panel panel reveal">
+        <div class="resume-left">
+          <div class="resume-file-icon">
+            <svg class="i" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div class="resume-info">
+            <h3 id="resumeTitle">Resume</h3>
+            <p class="mono resume-meta" id="resumeMeta">checking file…</p>
+            <div class="resume-tags" id="resumeTags"></div>
+          </div>
+        </div>
+        <div class="resume-actions">
+          <button class="btn btn-primary" id="resumeDownload">
+            <svg class="i" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Resume
+          </button>
+          <a href="#contact" class="btn btn-ghost">
+            <svg class="i" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+            Request by Email
+          </a>
+        </div>
+        <div class="resume-terminal mono" aria-hidden="true">
+          <span class="t-prompt">$</span> ls -la resume/
+          <span class="dim" id="resumeLs">—</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <h2 class="section-title reveal"><span class="title-tag">// 06</span> GET IN TOUCH</h2>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-intro panel">
+            <h3 id="contactIntroTitle"></h3>
+            <p id="contactIntroText"></p>
+          </div>
+
+          <div class="contact-methods" id="contactMethods"></div>
+
+          <div class="social-connect panel">
+            <h4><svg class="i"></svg> CONNECT</h4>
+            <div class="social-row" id="contactSocials"></div>
+          </div>
+        </div>
+
+        <div class="contact-form-panel panel reveal" data-delay="150">
+          <div class="panel-head">
+            <span class="led led-cyan blink"></span> TRANSMIT MESSAGE
+            <span class="panel-head-sub">secure · encrypted · direct</span>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name"><svg class="i"></svg> Your Name</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="email"><svg class="i"></svg> Your Email</label>
+              <input type="email" id="email" name="email" placeholder="john@company.com" required>
+            </div>
+            <div class="form-group">
+              <label for="subject"><svg class="i"></svg> Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Opportunity / Collaboration" required>
+            </div>
+            <div class="form-group">
+              <label for="message"><svg class="i"></svg> Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              <svg class="i"></svg> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3><span class="brand-prompt">&gt;_</span> <span id="footerName">Durgesh Yadav</span></h3>
+          <p id="footerTagline"></p>
+          <p class="footer-meta"><span class="led led-green"></span> All systems operational</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#resume">Resume</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Channels</h4>
+          <div class="social-row" id="footerSocials"></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> Durgesh Yadav · All Rights Reserved</p>
+        <p class="mono dim">built with <span class="c-red">&hearts;</span> &amp; <span class="c-cyan">code</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTop" class="scroll-top" aria-label="Back to top"><svg class="i"></svg></button>
+
+  <!-- Lightweight toast -->
+  <div id="toastHost" class="toast-host"></div>
+
+  <script src="content.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

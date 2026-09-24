@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Super Admin — Portfolio Control</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0f18'/%3E%3Crect x='8' y='14' width='16' height='12' rx='2' fill='none' stroke='%23fbbf24' stroke-width='2'/%3E%3Cpath d='M11 14v-3a5 5 0 0 1 10 0v3' fill='none' stroke='%23fbbf24' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- ============ LOGIN ============ -->
+  <div id="loginView" class="login-view" hidden>
+    <div class="login-bg-grid"></div>
+    <div class="login-card">
+      <div class="login-head">
+        <span class="led led-amber blink"></span>
+        <span class="mono">SECURE ACCESS // SUPER ADMIN</span>
+      </div>
+      <div class="login-body">
+        <div class="login-lock">🔒</div>
+        <h1>Portfolio Control</h1>
+        <p class="dim mono login-sub">Authenticate to manage site content</p>
+
+        <form id="loginForm" autocomplete="off">
+          <div class="af-group">
+            <label for="loginUser">USERNAME</label>
+            <input type="text" id="loginUser" placeholder="admin" required autocomplete="off">
+          </div>
+          <div class="af-group">
+            <label for="loginPass">PASSWORD</label>
+            <input type="password" id="loginPass" placeholder="••••••••" required autocomplete="off">
+          </div>
+          <p id="loginError" class="login-error" hidden></p>
+          <button type="submit" class="btn btn-primary btn-block" id="loginBtn">
+            <span class="led led-green"></span> AUTHENTICATE
+          </button>
+        </form>
+
+        <div class="login-hint mono">
+          default: <b class="c-cyan">admin</b> / <b class="c-cyan">Admin@123</b>
+          <br><span class="dim">change it in Settings after first login</span>
+        </div>
+      </div>
+      <div class="login-foot mono">
+        <span><span class="led led-green"></span> SYSTEM ONLINE</span>
+        <a href="../index.html" class="c-cyan">← back to site</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ APP ============ -->
+  <div id="appView" class="admin-app" hidden>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="side-brand">
+        <span class="brand-prompt">&gt;_</span>
+        <div>
+          <b>ADMIN</b>
+          <small class="dim mono">portfolio control</small>
+        </div>
+      </div>
+
+      <nav class="side-nav" id="sideNav">
+        <button class="side-link active" data-panel="overview"><span class="sl-ico">▦</span> Overview</button>
+        <button class="side-link" data-panel="hero"><span class="sl-ico">◆</span> Hero &amp; Stats</button>
+        <button class="side-link" data-panel="about"><span class="sl-ico">●</span> About</button>
+        <button class="side-link" data-panel="skills"><span class="sl-ico">☰</span> Skills</button>
+        <button class="side-link" data-panel="experience"><span class="sl-ico">▸</span> Experience</button>
+        <button class="side-link" data-panel="education"><span class="sl-ico">✦</span> Education</button>
+        <button class="side-link" data-panel="contact"><span class="sl-ico">✉</span> Contact</button>
+        <button class="side-link" data-panel="photos"><span class="sl-ico">▣</span> Photos</button>
+        <button class="side-link" data-panel="resume"><span class="sl-ico">⤓</span> Resume</button>
+        <button class="side-link" data-panel="messages">
+          <span class="sl-ico">✉</span> Messages
+          <span class="badge" id="msgBadge" hidden>0</span>
+        </button>
+        <button class="side-link" data-panel="settings"><span class="sl-ico">⚙</span> Settings</button>
+      </nav>
+
+      <div class="side-foot">
+        <a href="../index.html" class="side-view-site">↗ View live site</a>
+        <button id="logoutBtn" class="side-logout">⏻ Logout</button>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <button id="sideToggle" class="side-toggle" aria-label="Menu">☰</button>
+        <div class="top-title">
+          <h2 id="panelTitle">Overview</h2>
+          <span class="mono dim" id="panelCrumb">// control / overview</span>
+        </div>
+        <div class="top-actions">
+          <span class="save-state mono dim" id="saveState">no unsaved changes</span>
+          <button class="btn btn-outline btn-sm" id="previewBtn">Preview</button>
+          <button class="btn btn-primary btn-sm" id="publishBtn">💾 Publish Changes</button>
+        </div>
+      </header>
+
+      <div class="admin-content">
+
+        <!-- OVERVIEW -->
+        <section class="apanel active" id="panel-overview">
+          <div class="ov-grid">
+            <div class="ov-card"><div class="ov-num" id="ovExp">0</div><div class="ov-label">Experience entries</div></div>
+            <div class="ov-card"><div class="ov-num" id="ovSkills">0</div><div class="ov-label">Skill items</div></div>
+            <div class="ov-card"><div class="ov-num" id="ovEdu">0</div><div class="ov-label">Education cards</div></div>
+            <div class="ov-card ov-msg"><div class="ov-num" id="ovMsg">0</div><div class="ov-label">Contact messages</div></div>
+          </div>
+
+          <div class="panel-box">
+            <h3><span class="led led-cyan"></span> Quick actions</h3>
+            <div class="quick-actions">
+              <button class="qa-btn" data-goto="about">Edit About text</button>
+              <button class="qa-btn" data-goto="skills">Manage Skills</button>
+              <button class="qa-btn" data-goto="experience">Add Experience</button>
+              <button class="qa-btn" data-goto="photos">Change Photos</button>
+              <button class="qa-btn" data-goto="messages">Read Messages <span class="badge" id="qaMsgBadge" hidden>0</span></button>
+              <button class="qa-btn" data-goto="settings">Export for hosting</button>
+            </div>
+          </div>
+
+          <div class="panel-box">
+            <h3><span class="led led-amber"></span> How this works</h3>
+            <ol class="help-list mono">
+              <li>Edit content in the left menu → press <b class="c-cyan">Publish Changes</b>.</li>
+              <li>Edits show instantly in <b>this browser</b> (localStorage).</li>
+              <li>To update the <b>live website for everyone</b>: Settings → <b class="c-cyan">Export content.js</b> → upload it to your host replacing the old file.</li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- HERO & STATS -->
+        <section class="apanel" id="panel-hero">
+          <div class="panel-box">
+            <h3>Identity</h3>
+            <div class="af-group">
+              <label>FULL NAME</label>
+              <input type="text" id="f_name">
+            </div>
+            <div class="af-group">
+              <label>ROLES (typing animation — one per line)</label>
+              <textarea id="f_roles" rows="4"></textarea>
+            </div>
+            <div class="af-group">
+              <label>HERO DESCRIPTION</label>
+              <textarea id="f_heroDesc" rows="3"></textarea>
+            </div>
+            <div class="af-group">
+              <label>TECH TICKER (bottom of hero)</label>
+              <input type="text" id="f_ticker">
+            </div>
+          </div>
+
+          <div class="panel-box">
+            <h3>Stats counters</h3>
+            <div id="statsEditor" class="list-editor"></div>
+            <button class="add-btn" id="addStat">+ Add stat</button>
+          </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="apanel" id="panel-about">
+          <div class="panel-box">
+            <h3>About text</h3>
+            <div class="af-group">
+              <label>LEAD PARAGRAPH (highlighted)</label>
+              <textarea id="f_aboutLead" rows="3"></textarea>
+            </div>
+            <div class="af-group">
+              <label>SECOND PARAGRAPH</label>
+              <textarea id="f_aboutBody" rows="4"></textarea>
+            </div>
+          </div>
+
+          <div class="panel-box">
+            <h3>Info cards (DOB, nationality…)</h3>
+            <div id="infoEditor" class="list-editor"></div>
+            <button class="add-btn" id="addInfo">+ Add info card</button>
+          </div>
+
+          <div class="panel-box">
+            <h3>Personality traits</h3>
+            <div id="traitEditor" class="list-editor"></div>
+            <button class="add-btn" id="addTrait">+ Add trait</button>
+          </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="apanel" id="panel-skills">
+          <div class="panel-box">
+            <h3>Skill categories &amp; meters</h3>
+            <div id="skillCatEditor"></div>
+            <button class="add-btn" id="addSkillCat">+ Add category</button>
+          </div>
+          <div class="panel-box">
+            <h3>Skill cards (grid)</h3>
+            <div id="skillCardEditor" class="list-editor"></div>
+            <button class="add-btn" id="addSkillCard">+ Add skill card</button>
+          </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section class="apanel" id="panel-experience">
+          <div class="panel-box">
+            <div class="box-head-row">
+              <h3>Work experience (timeline)</h3>
+            </div>
+            <div id="expEditor"></div>
+            <button class="add-btn" id="addExp">+ Add experience</button>
+          </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section class="apanel" id="panel-education">
+          <div class="panel-box">
+            <h3>Education &amp; certifications</h3>
+            <div id="eduEditor" class="list-editor"></div>
+            <button class="add-btn" id="addEdu">+ Add education/cert</button>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="apanel" id="panel-contact">
+          <div class="panel-box">
+            <h3>Contact section</h3>
+            <div class="af-row">
+              <div class="af-group"><label>INTRO TITLE</label><input type="text" id="f_cTitle"></div>
+              <div class="af-group"><label>LOCATION</label><input type="text" id="f_cLocation"></div>
+            </div>
+            <div class="af-group"><label>INTRO TEXT</label><textarea id="f_cText" rows="2"></textarea></div>
+            <div class="af-row">
+              <div class="af-group"><label>EMAIL</label><input type="email" id="f_cEmail"></div>
+              <div class="af-group"><label>PHONE</label><input type="text" id="f_cPhone"></div>
+            </div>
+            <div class="af-group"><label>LINKEDIN (display text)</label><input type="text" id="f_cLinkedin"></div>
+          </div>
+
+          <div class="panel-box">
+            <h3>Social links</h3>
+            <div id="socialEditor" class="list-editor"></div>
+            <button class="add-btn" id="addSocial">+ Add social link</button>
+          </div>
+
+          <div class="panel-box">
+            <h3>Footer</h3>
+            <div class="af-group"><label>TAGLINE</label><input type="text" id="f_tagline"></div>
+          </div>
+        </section>
+
+        <!-- PHOTOS -->
+        <section class="apanel" id="panel-photos">
+          <div class="panel-box">
+            <h3><span class="led led-cyan"></span> Hero avatar (round photo)</h3>
+            <div class="photo-edit-row">
+              <div class="photo-preview circle" id="prevAvatar"><span class="avatar-initials">AK</span></div>
+              <div class="photo-controls">
+                <input type="file" id="avatarFile" accept="image/*" hidden>
+                <button class="btn btn-outline btn-sm" id="avatarPick">📁 Choose image…</button>
+                <button class="btn btn-ghost btn-sm" id="avatarReset">Reset to default</button>
+                <p class="mono dim small">Auto-resized to 400×400 · stored in this browser</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-box">
+            <h3><span class="led led-green"></span> About section photo (square)</h3>
+            <div class="photo-edit-row">
+              <div class="photo-preview" id="prevPhoto"><span class="avatar-initials big">AK</span></div>
+              <div class="photo-controls">
+                <input type="file" id="photoFile" accept="image/*" hidden>
+                <button class="btn btn-outline btn-sm" id="photoPick">📁 Choose image…</button>
+                <button class="btn btn-ghost btn-sm" id="photoReset">Reset to default</button>
+                <p class="mono dim small">Auto-resized to 800×800 · stored in this browser</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-box warn-box">
+            <h3><span class="led led-amber"></span> Publishing photos to the live site</h3>
+            <p class="mono dim small">
+              Photos chosen here are saved as base64 inside the content — when you
+              <b class="c-cyan">Export content.js</b> and upload it, the photos travel with it.
+              Keep images under ~300 KB each for best performance.
+            </p>
+          </div>
+        </section>
+
+        <!-- RESUME -->
+        <section class="apanel" id="panel-resume">
+          <div class="panel-box">
+            <h3><span class="led led-cyan"></span> Resume / CV file</h3>
+            <p class="mono dim small" style="margin-bottom:16px">
+              Visitors download this file from the <b class="c-cyan">Resume</b> section of your site.
+              Accepted: PDF, DOC, DOCX. Keep it under ~2 MB.
+            </p>
+
+            <div class="resume-admin-preview" id="resumeAdminPrev">
+              <div class="ra-icon">📄</div>
+              <div class="ra-info">
+                <b id="raName">No resume uploaded yet</b>
+                <span class="mono dim small" id="raMeta">—</span>
+              </div>
+              <div class="ra-tools">
+                <button class="msg-tool" id="resumeTestDl" hidden>Test download</button>
+              </div>
+            </div>
+
+            <div class="row-actions" style="margin-top:16px">
+              <input type="file" id="resumeFile" accept=".pdf,.doc,.docx,application/pdf" hidden>
+              <button class="btn btn-primary btn-sm" id="resumePick">📁 Upload resume…</button>
+              <button class="btn btn-ghost btn-sm" id="resumeClear" hidden>Remove</button>
+            </div>
+
+            <div class="af-group" style="margin-top:18px">
+              <label>OR USE A FILE PATH (lighter — file lives on your host, e.g. assets/resume.pdf)</label>
+              <input type="text" id="resumePath" placeholder="assets/resume.pdf">
+            </div>
+            <button class="btn btn-outline btn-sm" id="resumePathApply">Apply path</button>
+          </div>
+
+          <div class="panel-box warn-box">
+            <h3><span class="led led-amber"></span> Publish reminder</h3>
+            <p class="mono dim small">
+              After uploading, press <b class="c-cyan">Publish Changes</b>. For the live site also
+              <b class="c-cyan">Export content.js</b> — the embedded resume travels inside it.
+              If you used a file path instead, upload the file itself to your host too.
+            </p>
+          </div>
+        </section>
+
+        <!-- MESSAGES -->
+        <section class="apanel" id="panel-messages">
+          <div class="panel-box">
+            <div class="box-head-row">
+              <h3><span class="led led-green blink"></span> Contact form inbox</h3>
+              <div class="row-actions">
+                <button class="btn btn-outline btn-sm" id="exportMsgs">Export CSV</button>
+                <button class="btn btn-ghost btn-sm" id="clearMsgs">Clear all</button>
+              </div>
+            </div>
+            <div id="messagesList" class="messages-list"></div>
+          </div>
+        </section>
+
+        <!-- SETTINGS -->
+        <section class="apanel" id="panel-settings">
+          <div class="panel-box">
+            <h3><span class="led led-amber"></span> Deploy to live website</h3>
+            <p class="mono dim small" style="margin-bottom:14px">
+              Static hosting (GitHub Pages, Netlify, cPanel…): export the updated
+              <b class="c-cyan">content.js</b> and replace the file on your host. All visitors then see your edits.
+            </p>
+            <div class="row-actions">
+              <button class="btn btn-primary btn-sm" id="exportJs">⬇ Export content.js</button>
+              <button class="btn btn-outline btn-sm" id="importJsonBtn">⬆ Import JSON</button>
+              <input type="file" id="importJsonFile" accept=".json,application/json" hidden>
+            </div>
+          </div>
+
+          <div class="panel-box">
+            <h3>Change admin login</h3>
+            <div class="af-row">
+              <div class="af-group"><label>NEW USERNAME</label><input type="text" id="newUser" placeholder="admin"></div>
+              <div class="af-group"><label>NEW PASSWORD</label><input type="password" id="newPass" placeholder="min 6 characters"></div>
+            </div>
+            <div class="af-group"><label>CONFIRM PASSWORD</label><input type="password" id="newPass2" placeholder="repeat password"></div>
+            <button class="btn btn-primary btn-sm" id="changePassBtn">Update credentials</button>
+          </div>
+
+          <div class="panel-box danger-box">
+            <h3><span class="led led-red"></span> Danger zone</h3>
+            <p class="mono dim small" style="margin-bottom:14px">Reset all edits back to the original shipped content (does not clear messages or credentials).</p>
+            <button class="btn btn-danger btn-sm" id="resetContentBtn">Reset to defaults</button>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <div id="toastHost" class="toast-host"></div>
+
+  <script src="../content.js"></script>
+  <script src="../admin.js"></script>
+</body>
+</html>
